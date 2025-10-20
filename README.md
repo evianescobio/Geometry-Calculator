@@ -1,4 +1,4 @@
-### 📐 Area Calculator (Python)
+# 📐 Area Calculator (Python)
 
 This Python program lets you calculate the area of common geometric shapes using a simple text-based menu. It demonstrates the use of functions, loops, conditionals, and user input.
 
