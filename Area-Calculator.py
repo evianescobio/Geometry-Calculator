@@ -79,6 +79,21 @@ def perimeter_menu():
         print("4) Circle")
         print("0) Quit")
 
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            a = float(input("Side A: "))
+            b = float(input("Side B: "))
+            c = float(input("Side C: "))
+            print("Perimeter =", round(a + b + c, 2))
+        
+        elif choice == "2":
+            w = float(input("Width: "))
+            h = float(input("Height: "))
+            print("Perimeter =", round(2 * (w + h), 2))
+
+        
+
 
 # Main Function
 def main():
