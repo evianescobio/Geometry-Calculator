@@ -77,6 +77,7 @@ def perimeter_menu():
         print("2) Rectangle")
         print("3) Square")
         print("4) Circle")
+        print("5) Trapezoid")
         print("0) Quit")
 
         choice = input("Choose an option: ").strip()
@@ -91,8 +92,28 @@ def perimeter_menu():
             w = float(input("Width: "))
             h = float(input("Height: "))
             print("Perimeter =", round(2 * (w + h), 2))
-
         
+        elif choice == "3":
+            s = float(input("Side: "))
+            print("Perimeter =", round(4 * s, 2))
+
+        elif choice == "4":
+            r = float(input("Radius: "))
+            print("Perimeter =", round(2 * math.pi * r, 2))
+
+        elif choice == "5":
+            a = float(input("Side A: "))
+            b = float(input("Side B: "))
+            c = float(input("Side C: "))
+            d = float(input("Side D: "))
+            print("Perimeter =", round(a + b + c + d, 2))
+        
+        elif choice == "0":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid option, please try again.")
 
 
 # Main Function
