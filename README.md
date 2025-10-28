@@ -23,7 +23,6 @@ Each shape has its own formula defined in a separate function.
 
 ## 💡 Future Improvements
 
-- Add perimeter calculations
 - Support for units (e.g., cm², m²)
 - GUI version using Tkinter or a web-based interface
 
