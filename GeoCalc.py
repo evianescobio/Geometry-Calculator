@@ -182,7 +182,6 @@ def volume_menu():
         else:
             print("Invalid option, please try again.")
 
-
 # Main Function
 def main():
     while True:
