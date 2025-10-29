@@ -30,6 +30,9 @@ def area_trapezoid(base1, base2, height):
 # --FORMULAS FOR PERIMETER CALCULATION-- #
 # Triangle Perimeter #
 def perimeter_triangle(side_a, side_b, side_c):
+    # Check if sides can form a valid triangle
+    if (side_a + side_b <= side_c) or (side_b + side_c <= side_a) or (side_a + side_c <= side_b):
+        raise ValueError("These sides cannot form a valid triangle!")
     return side_a + side_b + side_c
 
 # Rectangle Perimeter #
@@ -91,8 +94,14 @@ def area_menu():
             print("Area =", round(area_square(s), 2))
 
         elif choice == "4":
-            r = float(input("Radius: "))
-            print("Area =", round(area_circle(r), 2))
+            try:
+                r = float(input("Radius: "))
+                if r <= 0:
+                    print("Error: Radius must be a positive number!")
+                    continue
+                print("Area =", round(area_circle(r), 2))
+            except ValueError:
+                print("Error: Please enter a valid number!")
 
         elif choice == "5":
             b1 = float(input("Base 1: "))
@@ -121,10 +130,19 @@ def perimeter_menu():
         choice = input("Choose an option: ").strip()
 
         if choice == "1":
-            a = float(input("Side A: "))
-            b = float(input("Side B: "))
-            c = float(input("Side C: "))
-            print("Perimeter =", round(perimeter_triangle(a, b, c), 2))
+            try:
+                a = float(input("Side A: "))
+                b = float(input("Side B: "))
+                c = float(input("Side C: "))
+                if any(side <= 0 for side in [a, b, c]):
+                    print("Error: All sides must be positive numbers!")
+                    continue
+                print("Perimeter =", round(perimeter_triangle(a, b, c), 2))
+            except ValueError as e:
+                if str(e).startswith("These sides"):
+                    print(e)
+                else:
+                    print("Error: Please enter valid numbers!")
         
         elif choice == "2":
             w = float(input("Width: "))
