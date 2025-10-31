@@ -1,6 +1,9 @@
 import math
+
 from Formulas.Areas import (area_triangle, area_rectangle, area_square, area_circle, area_trapezoid)
+
 from Formulas.Perimeters import (perimeter_triangle, perimeter_rectangle, perimeter_square, perimeter_circle, perimeter_trapezoid)
+
 from Formulas.Volumes import (volume_cube, volume_rectangular_prism, volume_cylinder)
 
 # Display Menu to Calculate Area. #
