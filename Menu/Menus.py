@@ -23,7 +23,7 @@ def area_menu():
             try:
                 b = float(input("Base (cm): "))
                 h = float(input("Height (cm): "))
-                print("Area =", round(area_triangle(b, h), 2))
+                print("\nArea =", round(area_triangle(b, h), 2))
                 # Ask whether to repeat or return to main menu.
                 if not back_to_main_menu():
                     break
@@ -34,7 +34,7 @@ def area_menu():
             try:
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("Area =", round(area_rectangle(w, h), 2))
+                print("\nArea =", round(area_rectangle(w, h), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -43,7 +43,7 @@ def area_menu():
         elif choice == "3":
             try:
                 s = float(input("Side (cm): "))
-                print("Area =", round(area_square(s), 2))
+                print("\nArea =", round(area_square(s), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -55,7 +55,7 @@ def area_menu():
                 if r <= 0:
                     print("Error: Radius must be a positive number!")
                     continue
-                print("Area =", round(area_circle(r), 2))
+                print("\nArea =", round(area_circle(r), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -66,7 +66,7 @@ def area_menu():
                 b1 = float(input("Base 1 (cm): "))
                 b2 = float(input("Base 2 (cm): "))
                 h = float(input("Height (cm): "))
-                print("Area =", round(area_trapezoid(b1, b2, h), 2))
+                print("\nArea =", round(area_trapezoid(b1, b2, h), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -101,11 +101,11 @@ def perimeter_menu():
                 if any(side <= 0 for side in [a, b, c]):
                     print("Error: All sides must be positive numbers!")
                     continue
-                print("Perimeter =", round(perimeter_triangle(a, b, c), 2))
+                print("\nPerimeter =", round(perimeter_triangle(a, b, c), 2))
                 if not back_to_main_menu():
                     break
             except ValueError as e:
-                # perimeter_triangle may raise a ValueError for invalid triangle sides
+                # perimeter_triangle may raise a ValueError for invalid triangle sides. #
                 if str(e).startswith("These sides"):
                     print(e)
                 else:
@@ -115,16 +115,16 @@ def perimeter_menu():
             try:
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("Perimeter =", round(perimeter_rectangle(w, h), 2))
+                print("\nPerimeter =", round(perimeter_rectangle(w, h), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
                 print("Error: Please enter valid numbers!")
-        
+
         elif choice == "3":
             try:
                 s = float(input("Side (cm): "))
-                print("Perimeter =", round(perimeter_square(s), 2))
+                print("\nPerimeter =", round(perimeter_square(s), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -133,7 +133,7 @@ def perimeter_menu():
         elif choice == "4":
             try:
                 r = float(input("Radius (cm): "))
-                print("Perimeter =", round(perimeter_circle(r), 2))
+                print("\nPerimeter =", round(perimeter_circle(r), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -145,7 +145,7 @@ def perimeter_menu():
                 b = float(input("Side B (cm): "))
                 c = float(input("Side C (cm): "))
                 d = float(input("Side D (cm): "))
-                print("Perimeter =", round(perimeter_trapezoid(a, b, c, d), 2))
+                print("\nPerimeter =", round(perimeter_trapezoid(a, b, c, d), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -173,7 +173,7 @@ def volume_menu():
         if choice == "1":
             try:
                 s = float(input("Side (cm): "))
-                print("Volume =", round(volume_cube(s), 2))
+                print("\nVolume =", round(volume_cube(s), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -183,7 +183,7 @@ def volume_menu():
                 l = float(input("Length (cm): "))
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("Volume =", round(volume_rectangular_prism(l, w, h), 2))
+                print("\nVolume =", round(volume_rectangular_prism(l, w, h), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -192,7 +192,7 @@ def volume_menu():
             try:
                 r = float(input("Radius (cm): "))
                 h = float(input("Height (cm): "))
-                print("Volume =", round(volume_cylinder(r, h), 2))
+                print("\nVolume =", round(volume_cylinder(r, h), 2))
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -207,7 +207,7 @@ def volume_menu():
 # Loop back to main menu after each calculation. #
 def back_to_main_menu():
     while True:
-        choice = input("Do you want to do another calculation in this menu?(Y/N): ").strip().lower()
+        choice = input("\nDo you want to do another calculation in this menu?(Y/N): ").strip().lower()
         if choice in ("y", "yes"):
             return True
         if choice in ("n", "no"):
