@@ -1,18 +1,14 @@
-# 📐 Area Calculator (Python)
+# 📐 Geometry Calculator (Python)
 
-This Python program lets you calculate the area of common geometric shapes using a simple text-based menu. It demonstrates the use of functions, loops, conditionals, and user input.
+This Python program lets you calculate the area, perimeter and volume of common geometric shapes using a simple text-based menu. It demonstrates the use of functions, loops, conditionals, and user input.
 
 ## 🔹 Features
 
-1- Triangle
+1- Area (Triangle, Rectangle, Square, Circle, Trapezoid)
 
-2- Rectangle
+2- Perimeter (Triangle, Rectangle, Square, Circle, Trapezoid)
 
-3- Square
-
-4- Circle
-
-5- Trapezoid
+3- Volume (Rectangular Prism, Cube, Cylinder)
 
 
 ## ⚙️ How It Works
