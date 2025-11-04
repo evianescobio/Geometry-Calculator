@@ -19,8 +19,9 @@ Each shape has its own formula defined in a separate function.
 
 ## 💡 Future Improvements
 
-- Support for units (e.g., cm², m²)
+- Additional Shapes and Methods
 - GUI version using Tkinter or a web-based interface
+
 
 
 ## 📄 License
