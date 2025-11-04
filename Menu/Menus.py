@@ -1,10 +1,12 @@
+# This module provides menus for calculating areas, perimeters, #
+# and volumes, using functions from the Formulas package. #
+
 import math
 
 from Formulas.Areas import (area_triangle, area_rectangle, area_square, area_circle, area_trapezoid)
-
 from Formulas.Perimeters import (perimeter_triangle, perimeter_rectangle, perimeter_square, perimeter_circle, perimeter_trapezoid)
-
 from Formulas.Volumes import (volume_cube, volume_rectangular_prism, volume_cylinder)
+from Menu.UnitConverterMenus import (converter_units_area_menu, converter_units_perimeter_menu, converter_units_volume_menu)
 
 # Display Menu to Calculate Area. #
 def area_menu():
@@ -23,8 +25,9 @@ def area_menu():
             try:
                 b = float(input("Base (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nArea =", round(area_triangle(b, h), 2))
-                # Ask whether to repeat or return to main menu.
+                result = area_triangle(b, h)
+                print("\nArea =", round(result, 2), "cm²")
+                converter_units_area_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -34,7 +37,9 @@ def area_menu():
             try:
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nArea =", round(area_rectangle(w, h), 2))
+                result = area_rectangle(w, h)
+                print("\nArea =", round(result, 2), "cm²")
+                converter_units_area_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -43,7 +48,9 @@ def area_menu():
         elif choice == "3":
             try:
                 s = float(input("Side (cm): "))
-                print("\nArea =", round(area_square(s), 2))
+                result = area_square(s)
+                print("\nArea =", round(result, 2), "cm²")
+                converter_units_area_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -55,7 +62,9 @@ def area_menu():
                 if r <= 0:
                     print("Error: Radius must be a positive number!")
                     continue
-                print("\nArea =", round(area_circle(r), 2))
+                result = area_circle(r)
+                print("\nArea =", round(result, 2), "cm²")
+                converter_units_area_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -66,7 +75,9 @@ def area_menu():
                 b1 = float(input("Base 1 (cm): "))
                 b2 = float(input("Base 2 (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nArea =", round(area_trapezoid(b1, b2, h), 2))
+                result = area_trapezoid(b1, b2, h)
+                print("\nArea =", round(result, 2), "cm²")
+                converter_units_area_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -101,7 +112,9 @@ def perimeter_menu():
                 if any(side <= 0 for side in [a, b, c]):
                     print("Error: All sides must be positive numbers!")
                     continue
-                print("\nPerimeter =", round(perimeter_triangle(a, b, c), 2))
+                result = perimeter_triangle(a, b, c)
+                print("\nPerimeter =", round(result, 2), "cm")
+                converter_units_perimeter_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError as e:
@@ -115,7 +128,9 @@ def perimeter_menu():
             try:
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nPerimeter =", round(perimeter_rectangle(w, h), 2))
+                result = perimeter_rectangle(w, h)
+                print("\nPerimeter =", round(result, 2), "cm")
+                converter_units_perimeter_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -124,7 +139,9 @@ def perimeter_menu():
         elif choice == "3":
             try:
                 s = float(input("Side (cm): "))
-                print("\nPerimeter =", round(perimeter_square(s), 2))
+                result = perimeter_square(s)
+                print("\nPerimeter =", round(result, 2), "cm")
+                converter_units_perimeter_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -133,7 +150,9 @@ def perimeter_menu():
         elif choice == "4":
             try:
                 r = float(input("Radius (cm): "))
-                print("\nPerimeter =", round(perimeter_circle(r), 2))
+                result = perimeter_circle(r)
+                print("\nPerimeter =", round(result, 2), "cm")
+                converter_units_perimeter_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -145,7 +164,9 @@ def perimeter_menu():
                 b = float(input("Side B (cm): "))
                 c = float(input("Side C (cm): "))
                 d = float(input("Side D (cm): "))
-                print("\nPerimeter =", round(perimeter_trapezoid(a, b, c, d), 2))
+                result = perimeter_trapezoid(a, b, c, d)
+                print("\nPerimeter =", round(result, 2), "cm")
+                converter_units_perimeter_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -173,7 +194,9 @@ def volume_menu():
         if choice == "1":
             try:
                 s = float(input("Side (cm): "))
-                print("\nVolume =", round(volume_cube(s), 2))
+                result = volume_cube(s)
+                print("\nVolume =", round(result, 2), "cm³")
+                converter_units_volume_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -183,7 +206,9 @@ def volume_menu():
                 l = float(input("Length (cm): "))
                 w = float(input("Width (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nVolume =", round(volume_rectangular_prism(l, w, h), 2))
+                result = volume_rectangular_prism(l, w, h)
+                print("\nVolume =", round(result, 2), "cm³")
+                converter_units_volume_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -192,7 +217,9 @@ def volume_menu():
             try:
                 r = float(input("Radius (cm): "))
                 h = float(input("Height (cm): "))
-                print("\nVolume =", round(volume_cylinder(r, h), 2))
+                result = volume_cylinder(r, h)
+                print("\nVolume =", round(result, 2), "cm³")
+                converter_units_volume_menu(result)
                 if not back_to_main_menu():
                     break
             except ValueError:
@@ -214,3 +241,5 @@ def back_to_main_menu():
             return False
         print("Invalid option. Please enter 'Y' to repeat or 'N' to return to the main menu.")
     
+
+

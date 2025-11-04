@@ -1,3 +1,4 @@
+# This module contains formulas to calculate areas of various geometric shapes. #
 import math
 
 # ---FORMULAS FOR AREA CALCULATION--- #

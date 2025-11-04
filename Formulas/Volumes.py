@@ -1,3 +1,4 @@
+# This module contains formulas to calculate volumes of various geometric shapes. #
 import math
 
 # --VOLUME CALCULATION-- #

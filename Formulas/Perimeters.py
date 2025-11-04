@@ -1,3 +1,4 @@
+# This module contains formulas to calculate perimeters of various geometric shapes. #
 import math
 
 # --FORMULAS FOR PERIMETER CALCULATION-- #
